@@ -648,9 +648,64 @@ void full_test() {
            chassis.odom_theta_get());
 }
 
-void random_for_ben();
 { 
   
   chassis.pid_drive_set(30_in, DRIVE_SPEED, true);
   chassis.pid_wait();
+}
+
+void right_4_3_slow();
+
+{
+  intake.move(127);
+  wing.set(true);
+  chassis.pid_drive_set(30_in, DRIVE_SPEED, true); 
+  chassis.pid_wait();
+  chassis.pid_turn_set(90_deg, 75);
+  chassis.pid_wait_quick_chain();
+  match_mech.set(true);
+  pros::delay(120);
+  chassis.pid_drive_set(12_in, 100, true);  
+  chassis.pid_wait();
+  pros::delay(850);
+  chassis.pid_drive_set(-1_in, 50, true);
+  chassis.pid_wait();
+  chassis.pid_drive_set(1_in, 50, true);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-1_in, 50, true);
+  chassis.pid_wait();
+  chassis.pid_drive_set(1_in, 50, true);
+  chassis.pid_wait();
+  intake.move(0);
+  chassis.pid_drive_set(-36_in, DRIVE_SPEED, true);
+  chassis.pid_wait_until(-17_in);
+  chassis.pid_speed_max_set(30);  // After driving 6 inches at 30 speed, the robot will go the remaining distance at DRIVE_SPEED
+  chassis.pid_wait();
+  match_mech.set(false);
+  intake.move(-127);
+  intake.move(127);
+  top_intake.move(127);
+  pros::delay(2100);
+  chassis.pid_drive_set(8.5_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+  top_intake.move(0);
+  chassis.pid_turn_set(10_deg, TURN_SPEED);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-8.5_in, DRIVE_SPEED, true);
+  chassis.pid_wait();
+  wing.set(false);
+  chassis.pid_turn_set(83_deg, 75);
+  chassis.pid_wait();
+  pros::delay(4000);   
+  chassis.pid_drive_set(-28.0_in, 50, true);
+  chassis.pid_wait();  
+  wing.set(true);
+  top_intake.move(0);
+  chassis.pid_drive_set(3_in, 50, true);
+  chassis.pid_wait();
+  chassis.pid_turn_set(137_deg, TURN_SPEED);
+  chassis.pid_wait_quick_chain();
+  pros::delay(120);
+  wing.set(false);
+
 }

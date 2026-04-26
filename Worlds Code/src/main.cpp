@@ -91,7 +91,7 @@ void initialize() {
       {" Left 7 Ball\n\nAutonomous for Blue Left Starting Position.\nPREVIEW TEMPS BELOW", left_7_ball},
       {"Test Wall Correct\n\nTests the wall correction routine with the forward distance sensor.\nPREVIEW TEMPS BELOW", test_wall_correct},
       {"Full Test\n\nTests all mechanisms + drive + turns. Robot should return to start.\nWatch terminal for [TEST] output.", full_test},
-      {"Test/auto" ,  random_for_ben},
+      {"Right 4/3 Slow\n\nAutonomous for Blue Right Starting Position.\nPREVIEW TEMPS BELOW", right_4_3_slow},
       });
 
   // Initialize chassis and auton selector
