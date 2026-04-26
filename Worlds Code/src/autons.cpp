@@ -648,11 +648,7 @@ void full_test() {
            chassis.odom_theta_get());
 }
 
-{ 
-  
-  chassis.pid_drive_set(30_in, DRIVE_SPEED, true);
-  chassis.pid_wait();
-}
+
 
 void right_4_3_slow();
 
